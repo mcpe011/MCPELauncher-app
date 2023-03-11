@@ -1,32 +1,36 @@
 package net.zhuoweizhang.mcpelauncher;
 
 import android.app.*;
-import android.content.Intent;
-import android.graphics.drawable.*;
+// import android.content.Intent;
+// import android.graphics.drawable.*;
 import android.os.*;
-import android.view.*;
+// import android.view.*;
 import android.widget.*;
-import com.google.android.gms.ads.*;
+// import com.google.android.gms.ads.*;
 
 import net.zhuoweizhang.mcpelauncher.ui.LauncherActivity;
 
 public class LauncherAppActivity extends LauncherActivity {
 
+	/*
 	private InterstitialAd interstitial;
 	private boolean needsShowAd = false;
 	private boolean adError = false;
 	private PopupWindow shadePopup;
 	private static final int MESSAGE_SHOW_AD = 608;
 	private static final int MESSAGE_AD_TIMEOUT = 609;
+	*/
 
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
+		/*
 		loadInterstitialAdvertisement();
 		TextView text = new TextView(this);
 		text.setText("Please wait...");
 		shadePopup = new PopupWindow(text, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 		shadePopup.setBackgroundDrawable(new ColorDrawable(0xff000000));
+		*/
 	}
 
 	/*@Override
@@ -36,14 +40,15 @@ public class LauncherAppActivity extends LauncherActivity {
 
 	@Override
 	public void onPrepareDialog(int dialogId, Dialog dialog) {
-		switch (dialogId) {
-			case DIALOG_RUNTIME_OPTIONS:
-				prepareRuntimeOptionsDialog(dialog);
-			default:
-				super.onPrepareDialog(dialogId, dialog);
-		}
+		// switch (dialogId) {
+		//	case DIALOG_RUNTIME_OPTIONS:
+		//		prepareRuntimeOptionsDialog(dialog);
+		//	default:
+		super.onPrepareDialog(dialogId, dialog);
+		// }
 	}
 
+	/*
 	protected void prepareRuntimeOptionsDialog(Dialog dialog) {
 		FrameLayout view = (FrameLayout) dialog.findViewById(android.R.id.custom);
 		view.setVisibility(View.VISIBLE);
@@ -65,12 +70,14 @@ public class LauncherAppActivity extends LauncherActivity {
 		adView.loadAd(adRequest);
 	}
 	private boolean hasCalledShowAdvertisement = false;
+	*/
 
 	@Override
 	public void leaveGameCallback() {
 		super.leaveGameCallback();
-		hasCalledShowAdvertisement = false;
+		// hasCalledShowAdvertisement = false;
 		// wait until we come back from the advertisement thread
+		/*
 		this.runOnUiThread(new Runnable() {
 			public void run() {
 				showAdvertisement();
@@ -85,8 +92,10 @@ public class LauncherAppActivity extends LauncherActivity {
 		try {
 			Thread.sleep(100);
 		} catch (Exception e) {}
+		*/
 	}
 
+	/*
 	protected void loadInterstitialAdvertisement() {
 		adError = false;
 		interstitial = new InterstitialAd(this);
@@ -119,7 +128,7 @@ public class LauncherAppActivity extends LauncherActivity {
 
 	public void showAdvertisement() {
 		if (adError) {
-			loadInterstitialAdvertisement(); // try again next time.
+			loadInterstitialAdvertisement();
 			return;
 		}
 		shadePopup.showAtLocation(getWindow().getDecorView(), Gravity.TOP | Gravity.LEFT, 0, 0);
@@ -143,7 +152,6 @@ public class LauncherAppActivity extends LauncherActivity {
 	private void actuallyShowAdvertisement() {
 		ScriptManager.nativeSetExitEnabled(true);
 		if (!shadePopup.isShowing()) {
-			// WTF?!
 			System.out.println("No longer ready to show ad.");
 			needsShowAd = false;
 			return;
@@ -173,4 +181,5 @@ public class LauncherAppActivity extends LauncherActivity {
 	private void adTimedOut() {
 		adOver();
 	}
+	*/
 }

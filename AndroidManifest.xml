@@ -164,6 +164,7 @@
             android:process=":CrashHandler"
             android:stateNotNeeded="true" />
 
+        <!--
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:theme="@android:style/Theme.Translucent"
@@ -171,6 +172,7 @@
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
+         -->
 
         <!-- Kamcord -->
 

@@ -1,30 +1,30 @@
 package net.zhuoweizhang.mcpelauncher;
 
 import android.os.*;
-import android.view.*;
-import android.widget.*;
+// import android.view.*;
+// import android.widget.*;
 
-import com.google.android.gms.ads.*;
+// import com.google.android.gms.ads.*;
 
 import net.zhuoweizhang.mcpelauncher.ui.*;
 
 public class MainMenuOptionsAppActivity extends MainMenuOptionsActivity {
 
-	private AdView adView;
+	// private AdView adView;
 
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
+		/*
 		try {
 			addAds();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
 	}
 
+	/*
 	private void addAds() {
-		//ViewGroup view = (ViewGroup) getWindow().getDecorView();
-		//LinearLayout content = (LinearLayout) view.getChildAt(0);
-		/* http://stackoverflow.com/a/21686506 */
 		View listView = findViewById(android.R.id.list);
 		ViewParent parentOfListView = listView.getParent();
 		if (parentOfListView == null) {
@@ -54,23 +54,23 @@ public class MainMenuOptionsAppActivity extends MainMenuOptionsActivity {
 			.build();
 		content.addView(adView, 0);
 		adView.loadAd(adRequest);
-	}
+	} */
 
 	@Override
 	public void onPause() {
-		if (adView != null) adView.pause();
+		// if (adView != null) adView.pause();
 		super.onPause();
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		if (adView != null) adView.resume();
+		// if (adView != null) adView.resume();
 	}
 
 	@Override
 	public void onDestroy() {
-		if (adView != null) adView.destroy();
+		// if (adView != null) adView.destroy();
 		super.onDestroy();
 	}
 
